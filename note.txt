@@ -1,0 +1,45 @@
+Laravel 9 and 8
+----------------------
+Filesystem ဆောက် ရမယ်
+appp/Filesystem/FileSystem.phpဆောက်
+
+Route
+----------------------------------------------------------------
+    - GET (show web page to user)
+    - POST (Store data)
+    - PUT (Update data)
+    - DELETE (delete data)
+
+Ecommer
+----------------------------------------------------------------
+    - Admin
+        -item manage(1)
+            -items,categories, subcategories,brands,
+        - order manage(3)
+            -orders, orderdetails
+    - Customer
+        - view items,orders(2)
+
+
+Migrations & Models
+--------------------------------
+    - php artisan make:model Mymodel -manage
+    - Migrations (table structure)
+    - Model () (Object Relational Mapping)
+
+CRUD
+--------------------------------
+    - Create Form => Store
+    - Retrieve All Item List => Details
+    - Show Update Form => Update
+    - Delete
+
+make resource Controlle
+
+php artisan make:controller CategoryController --resource --model=Category
+
+php artisan migrate:fresh (drop all table and migrate all)
+
+web.php မှာ controller directio ညွန်း
+Create Controller
+Controller က page.blade.php ကိုညွန်း

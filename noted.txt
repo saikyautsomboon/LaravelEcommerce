@@ -1,0 +1,29 @@
+FileSystem ဆောက်နည်း
+----------------------------------------------------------------
+
+
+
+<?php
+
+namespace App\Filesystem;
+
+use Illuminate\Filesystem\Filesystem as FilesystemBase;
+
+class Filesystem extends FilesystemBase
+{
+    public function put($path, $contents, $lock = false)
+    {
+        // don't pass the value of $lock to the parent method
+        return parent::put($path, $contents);
+    }
+}
+
+
+
+Providers/AppServicesProviders ဆောက်မှာ ထည့်ရေးထည့်
+
+  public function register()
+    {
+
+        $this->app->singleton('files', fn () => new Filesystem);
+    }
