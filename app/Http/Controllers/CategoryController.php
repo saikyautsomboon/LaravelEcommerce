@@ -14,8 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=Category::all();
-        return view('backend.category.category',compact('categories'));
+        $categories = Category::all();
+        return view('backend.category.index', compact('categories'))->with('i');
+        // ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -25,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.category.create');
     }
 
     /**
@@ -36,7 +37,28 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            "name" => 'required|min:3',
+            "photo" => 'required:mimes:jpg,jpeg,png',
+        ]);
+
+        if($request->file()){
+
+            $fileName=time().'_'.$request->photo->getClientOriginalName();
+
+            $filepath=$request->file('photo')->storeAs('categoryimg',$fileName,'public');
+
+            $path='/store/'.$filepath;
+        }
+        $category=new Category;
+        $category->name=$request->name;
+        $category->photo = $path;
+
+        $category->save();
+
+        return redirect()->route('categories.index')
+            ->with('success', 'Category created Successful');
     }
 
     /**
@@ -47,7 +69,6 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
     }
 
     /**
@@ -58,7 +79,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('backend.category.edit', compact('category'));
     }
 
     /**
@@ -70,7 +91,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $request->validate([
+            'name' => 'require',
+            'photo' => 'require',
+        ]);
+
+        // $photoName = time() . $request->photo->extension();
+
+        // $request->photo->move(public_path('categoryimg'), $photoName);
+
+        // $path = 'categoryimg/' . $photoName;
+
+        // $category = new Category;
+
+        // $category->name = $request->name;
+        // $category->photo = $path;
+
+        // $category->save();
+        return redirect()->route('categories.index')
+            ->with('success', 'Category Update Successfully');
     }
 
     /**
@@ -81,6 +120,8 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index')
+            ->with('success', 'Category Delete Successfully');
     }
 }
