@@ -7,11 +7,12 @@
 @endif
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-th-list"></i>Create New Categories</h1>
+            <h1><i class="fa fa-th-list"></i> Categories List</h1>
         </div>
 
         <a href="{{ route('categories.create') }}">
-            <i class="fa fa-plus-circle fa-3x color-success" aria-hidden="true"></i>
+            <button class="btn btn-primary">Add New</button>
+            {{-- <i class="fa fa-plus-circle fa-3x color-success" aria-hidden="true"></i> --}}
         </a>
 
     </div>
@@ -34,7 +35,10 @@
                                     <tr>
                                         <td>{{ ++$i }}</td>
                                         <td>{{ $category->name }}</td>
-                                        <td><img src="{{ asset($category->photo) }}" width="100" height="100"></td>
+                                        <td>
+                                            {{-- <input type="text" value="{{ asset($category->photo) }}"> --}}
+                                            <img src="{{ asset($category->photo) }}" width="100rem" height="100rem">
+                                        </td>
                                         <td>
 
                                             <form action="{{ route('categories.destroy', $category->id) }}" method='POSt'>

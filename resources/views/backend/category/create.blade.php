@@ -1,7 +1,7 @@
 @extends('backend.master'){{-- master.bladeမို့လို့masterခေါ်တာ --}}
 @section('content')
 
-    {{-- @if ($errors->any())
+    @if ($errors->any())
         <div class="alert alert-dange">
             <strong>Whoops!</strong>
             There were some problems with your input.<br><br>
@@ -12,10 +12,10 @@
                 @endforeach
             </ul>
         </div>
-    @endif --}}
+    @endif
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-th-list"></i> Categories Table</h1>
+            <h1><i class="fa fa-th-list"></i> Create New Categories</h1>
         </div>
         <a href="{{ route('categories.index') }}"> <i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i></a>
     </div>
@@ -34,7 +34,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="photo">Photo</label>
-                                <input class="form-control-file" name='photo' id="photos" type="file" aria-describedby="fileHelp">
+                                <input class="form-control-file @error('photo') is-invalid @enderror" name='photo' id="photos" type="file" aria-describedby="fileHelp">
+                                @error('photo')
+                                    <div class='alert alert-danger'>{{ $message }}</div>
+                                @enderror
                             </div>
                             <button class="btn btn-primary" type="submit">Submit</button>
 

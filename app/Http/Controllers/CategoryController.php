@@ -40,16 +40,15 @@ class CategoryController extends Controller
 
         $request->validate([
             "name" => 'required|min:3',
-            "photo" => 'required:mimes:jpg,jpeg,png',
+            "photo" => 'required|mimes:jpg,jpeg,png',
         ]);
 
         if($request->file()){
-
+            $bathphoto='/store/categoryimg/';
             $fileName=time().'_'.$request->photo->getClientOriginalName();
+            $request->file('photo')->move(public_path('store/categoryimg'),$fileName);
 
-            $filepath=$request->file('photo')->storeAs('categoryimg',$fileName,'public');
-
-            $path='/store/'.$filepath;
+            $path=$bathphoto.$fileName;
         }
         $category=new Category;
         $category->name=$request->name;
@@ -91,23 +90,25 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+
         $request->validate([
-            'name' => 'require',
-            'photo' => 'require',
+            "name" => 'required|min:3',
+            "photo" => 'sometimes|mimes:jpg,jpeg,png',
         ]);
 
-        // $photoName = time() . $request->photo->extension();
+        if($request->file()){
+            $bathphoto='/store/categoryimg/';
+            $fileName=time().'_'.$request->photo->getClientOriginalName();
+            $request->file('photo')->move(public_path('store/categoryimg'),$fileName);
 
-        // $request->photo->move(public_path('categoryimg'), $photoName);
+            $path=$bathphoto.$fileName;
+            $category->photo = $path;
+        }
 
-        // $path = 'categoryimg/' . $photoName;
+        $category->name=$request->name;
 
-        // $category = new Category;
 
-        // $category->name = $request->name;
-        // $category->photo = $path;
-
-        // $category->save();
+        $category->save();
         return redirect()->route('categories.index')
             ->with('success', 'Category Update Successfully');
     }
