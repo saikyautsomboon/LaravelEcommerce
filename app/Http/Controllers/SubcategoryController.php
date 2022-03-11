@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Subcategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class SubcategoryController extends Controller
@@ -14,7 +15,9 @@ class SubcategoryController extends Controller
      */
     public function index()
     {
-        //
+        $subcategories = Subcategory::all();
+        // $category=Category::all();
+        return view('backend.subcategory.index', compact('subcategories'));
     }
 
     /**
@@ -24,7 +27,8 @@ class SubcategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('backend.subcategory.create', compact('categories'));
     }
 
     /**
@@ -35,7 +39,11 @@ class SubcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'categoryname' => 'required',
+        ]);
+        var_dump('Hello');
     }
 
     /**
