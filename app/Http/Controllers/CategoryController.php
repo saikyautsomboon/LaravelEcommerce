@@ -102,6 +102,9 @@ class CategoryController extends Controller
             $request->file('photo')->move(public_path('store/categoryimg'),$fileName);
 
             $path=$bathphoto.$fileName;
+            if($category->photo==$path){
+                unlink($path);
+            }
             $category->photo = $path;
         }
 

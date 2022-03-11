@@ -23,3 +23,6 @@ Route::get('/',[FirstController::class,'index'])->name('home');
 Route::get('dashboard',[BackendController::class,'dashboard'])->name('dashboard');
 
 Route::resource('categories',CategoryController::class);
+Route::resource('brands',BrandController::class);
+Route::resource('subcategories',SubcategoryController::class);
+Route::resource('items',ItemController::class);

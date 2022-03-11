@@ -201,7 +201,7 @@
         </ul>
     </aside>
     <main class="app-content">
-        @yield('content');
+        @yield('content')
     </main>
     <!-- Essential javascripts for application to work-->
     <script src="{{ asset('backend/js/jquery-3.3.1.min.js') }}"></script>
