@@ -4,6 +4,9 @@ use App\Http\Controllers\BackendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\SubcategoryController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------

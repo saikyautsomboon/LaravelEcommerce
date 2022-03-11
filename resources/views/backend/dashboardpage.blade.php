@@ -1,7 +1,7 @@
 
 @extends('backend.master'){{-- master.bladeမို့လို့masterခေါ်တာ --}}
 @section('content')
-<main class="app-content">
+
     <div class="app-title">
         <div>
             <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
@@ -64,5 +64,4 @@
             </div>
         </div>
     </div>
-</main>
 @endsection
