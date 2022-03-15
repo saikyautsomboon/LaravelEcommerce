@@ -17,7 +17,7 @@ class SubcategoryController extends Controller
     {
         $subcategories = Subcategory::all();
         // $category=Category::all();
-        return view('backend.subcategory.index', compact('subcategories'));
+        return view('backend.subcategory.index', compact('subcategories'))->with('i');
     }
 
     /**
@@ -41,9 +41,19 @@ class SubcategoryController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'categoryname' => 'required',
+            'category_id' => 'required',
+
+
         ]);
-        var_dump('Hello');
+        $subcategory=new Subcategory;
+        $subcategory->name=$request->name;
+        $subcategory->category_id=$request->category_id;
+
+
+        $subcategory->save();
+
+        return redirect()->route('subcategories.index')
+        ->with('success', 'Subcategory Created successfully');
     }
 
     /**
@@ -65,7 +75,8 @@ class SubcategoryController extends Controller
      */
     public function edit(Subcategory $subcategory)
     {
-        //
+        $categories=Category::all();
+        return view('backend.subcategory.edit', compact('subcategory','categories'));
     }
 
     /**
@@ -77,7 +88,21 @@ class SubcategoryController extends Controller
      */
     public function update(Request $request, Subcategory $subcategory)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'category_id' => 'required',
+
+
+        ]);
+
+        $subcategory->name=$request->name;
+        $subcategory->category_id=$request->category_id;
+
+
+        $subcategory->save();
+
+        return redirect()->route('subcategories.index')
+        ->with('success', 'Subcategory Update successfully');
     }
 
     /**

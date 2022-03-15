@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\Brand;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -14,9 +16,11 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::all();
+        $brands = Brand::all();
+        $subcategories = Subcategory::all();
+        return view('backend.item.index', compact('items', 'brands', 'subcategories'))->with('i');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -24,7 +28,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        $brands = Brand::all();
+        $subcategories = Subcategory::all();
+        return view('backend.item.create', compact('brands', 'subcategories'));
     }
 
     /**
@@ -35,7 +41,45 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'codeno' => 'required',
+            'name' => 'required',
+            'photo' => 'required|mimes:jpg,jpeg,png',
+            'price' => 'required',
+            'discount' => 'sometimes',
+            'description' => 'required',
+            'brand_id' => 'required',
+            'subcategory_id' => 'required',
+        ]);
+
+        if ($request->file()) {
+            $bathphoto = '/store/itemimg/';
+            $fileName = time() . '_' . $request->photo->getClientOriginalName();
+            $request->file('photo')->move(public_path('store/itemimg'), $fileName);
+
+            $path = $bathphoto . $fileName;
+        }
+
+
+        $item = new Item;
+        $item->codeno = $request->codeno;
+        $item->name = $request->name;
+        $item->photo = $path;
+        $item->price = $request->price;
+        if ($request->discount == null) {
+            $item->discount = 0;
+        } else {
+            $item->discount = $request->discount;
+        }
+
+        $item->description = $request->description;
+        $item->brand_id = $request->brand_id;
+        $item->subcategory_id = $request->subcategory_id;
+
+        $item->save();
+
+        return redirect()->route('items.index')
+            ->with('success', 'Item created Successful');
     }
 
     /**
@@ -46,7 +90,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return view('backend.item.detail',compact('item'));
     }
 
     /**

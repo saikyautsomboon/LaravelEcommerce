@@ -38,10 +38,10 @@
                                         <td>{{ $subcategory->category_id }}</td>
                                         <td>
 
-                                            <form action="{{ route('subcategories.destroy', $brand->id) }}" method='POSt'>
+                                            <form action="{{ route('subcategories.destroy', $subcategory->id) }}" method='POSt'>
                                                 @csrf
                                                 <a class="btn btn-warning"
-                                                    href="{{ route('subcategories.edit', $brand->id) }}">Edit</a>
+                                                    href="{{ route('subcategories.edit', $subcategory->id) }}">Edit</a>
                                                 @method('DELETE')
                                                 <button type='submit' class="btn btn-danger">Delete</button>
 
