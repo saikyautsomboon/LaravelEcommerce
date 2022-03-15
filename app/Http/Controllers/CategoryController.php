@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -43,15 +44,15 @@ class CategoryController extends Controller
             "photo" => 'required|mimes:jpg,jpeg,png',
         ]);
 
-        if($request->file()){
-            $bathphoto='/store/categoryimg/';
-            $fileName=time().'_'.$request->photo->getClientOriginalName();
-            $request->file('photo')->move(public_path('store/categoryimg'),$fileName);
+        if ($request->file()) {
+            $bathphoto = '/store/categoryimg/';
+            $fileName = time() . '_' . $request->photo->getClientOriginalName();
+            $request->file('photo')->move(public_path('store/categoryimg'), $fileName);
 
-            $path=$bathphoto.$fileName;
+            $path = $bathphoto . $fileName;
         }
-        $category=new Category;
-        $category->name=$request->name;
+        $category = new Category;
+        $category->name = $request->name;
         $category->photo = $path;
 
         $category->save();
@@ -96,19 +97,19 @@ class CategoryController extends Controller
             "photo" => 'sometimes|mimes:jpg,jpeg,png',
         ]);
 
-        if($request->file()){
-            $bathphoto='/store/categoryimg/';
-            $fileName=time().'_'.$request->photo->getClientOriginalName();
-            $request->file('photo')->move(public_path('store/categoryimg'),$fileName);
+        if ($request->file()) {
+            $bathphoto = '/store/categoryimg/';
+            $fileName = time() . '_' . $request->photo->getClientOriginalName();
+            $request->file('photo')->move(public_path('store/categoryimg'), $fileName);
 
-            $path=$bathphoto.$fileName;
-            if($category->photo==$path){
+            $path = $bathphoto . $fileName;
+            if ($category->photo == $path) {
                 unlink($path);
             }
             $category->photo = $path;
         }
 
-        $category->name=$request->name;
+        $category->name = $request->name;
 
 
         $category->save();
@@ -124,7 +125,11 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->delete();
+        $subcategory = new Subcategory;
+
+        if ($category->id == $subcategory->category_id) {
+            $category->delete();
+        }
         return redirect()->route('categories.index')
             ->with('success', 'Category Delete Successfully');
     }
