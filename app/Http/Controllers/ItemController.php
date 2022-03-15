@@ -90,7 +90,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return view('backend.item.detail',compact('item'));
+        return view('backend.item.detail', compact('item'));
     }
 
     /**
@@ -101,7 +101,9 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        //
+        $brands = Brand::all();
+        $subcategories = Subcategory::all();
+        return view('backend.item.edit', compact('item', 'brands', 'subcategories'));
     }
 
     /**
@@ -113,7 +115,46 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $request->validate([
+            'codeno' => 'sometimes',
+            'name' => 'sometimes',
+            'photo' => 'sometimes|mimes:jpg,jpeg,png',
+            'price' => 'sometimes',
+            'discount' => 'sometimes',
+            'description' => 'sometimes',
+            'brand_id' => 'sometimes',
+            'subcategory_id' => 'sometimes',
+        ]);
+
+        if ($request->file()) {
+            $bathphoto = '/store/itemimg/';
+            $fileName = time() . '_' . $request->photo->getClientOriginalName();
+            $request->file('photo')->move(public_path('store/itemimg'), $fileName);
+
+            $path = $bathphoto . $fileName;
+            $item->photo = $path;
+        }
+
+
+
+        $item->codeno = $request->codeno;
+        $item->name = $request->name;
+
+        $item->price = $request->price;
+        if ($request->discount == null) {
+            $item->discount = 0;
+        } elseif($request->discount != null) {
+            $item->discount = $request->discount;
+        }
+
+        $item->description = $request->description;
+        $item->brand_id = $request->brand_id;
+        $item->subcategory_id = $request->subcategory_id;
+
+        $item->save();
+
+        return redirect()->route('items.index')
+            ->with('success', 'Item created Successful');
     }
 
     /**

@@ -21,53 +21,55 @@
                             <h5 class="text-right">Date : {{ $item->created_at }}</h5>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="tile">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td rowspan="7">
-                                            <img src={{ asset($item->photo) }}>
-                                        </td>
-                                        <td>Code No :</td>
-                                        <td>{{ $item->codeno }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Name :</td>
-                                        <td>{{ $item->name }}</td>
+                    <div class='row'>
+                        <div class="col-md-6">
+                            <div class="tile">
+                                <img src={{ asset($item->photo) }} class='itemwidth'>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tile">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Code No</td>
+                                            <td>{{ $item->codeno }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>{{ $item->name }}</td>
 
-                                    </tr>
-                                    <tr>
+                                        </tr>
+                                        <tr>
 
-                                        <td>Price :</td>
-                                        <td>{{ $item->price }}</td>
-                                    </tr>
-                                    <tr>
+                                            <td>Price</td>
+                                            <td>{{ $item->price }}</td>
+                                        </tr>
+                                        <tr>
 
-                                        <td>Discount :</td>
-                                        <td>{{ $item->discount }}</td>
-                                    </tr>
-                                    <tr>
+                                            <td>Discount</td>
+                                            <td>{{ $item->discount }}</td>
+                                        </tr>
+                                        <tr>
 
-                                        <td>Description :</td>
-                                        <td>{{ $item->description }}</td>
-                                    </tr>
-                                    <tr>
+                                            <td>Description</td>
+                                            <td>{{ $item->description }}</td>
+                                        </tr>
+                                        <tr>
 
-                                        <td>Brand :</td>
-                                        <td>{{ $item->brand_id }}</td>
-                                    </tr>
-                                    <tr>
+                                            <td>Brand</td>
+                                            <td>{{ $item->brand_id }}</td>
+                                        </tr>
+                                        <tr>
 
-                                        <td>SubCategory :</td>
-                                        <td>{{ $item->subcategory_id }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            <td>SubCategory</td>
+                                            <td>{{ $item->subcategory_id }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-
-
                 </section>
             </div>
         </div>
