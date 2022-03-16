@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\BackendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
@@ -7,7 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ItemController;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +18,6 @@ use App\Http\Controllers\ItemController;
 |
 */
 
-
-// Route::get('/', [FirstController::class,'index'])->name('home');
 Route::get('/',[FirstController::class,'index'])->name('home');
 
 Route::get('dashboard',[BackendController::class,'dashboard'])->name('dashboard');
@@ -29,3 +26,7 @@ Route::resource('categories',CategoryController::class);
 Route::resource('brands',BrandController::class);
 Route::resource('subcategories',SubcategoryController::class);
 Route::resource('items',ItemController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

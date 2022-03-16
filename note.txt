@@ -43,3 +43,12 @@ php artisan migrate:fresh (drop all table and migrate all)
 web.php မှာ controller directio ညွန်း
 Create Controller
 Controller က page.blade.php ကိုညွန်း
+
+
+Add Deafult Authentication
+===============================================================
+- composer require laravel/ui
+- php artisan ui bootstrap
+- php artisan ui bootstrap --auth
+- npm install
+- npm run dev
