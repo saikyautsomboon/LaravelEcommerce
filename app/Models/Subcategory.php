@@ -12,4 +12,11 @@ class Subcategory extends Model
         'name',
         'category_id',
     ];
+
+    public function Category(){
+        return $this->belongsTo('App\Models\Category');
+    }
+    public function Item(){
+        return $this->hasMany('App\Models\Item');
+    }
 }

@@ -18,4 +18,10 @@ class Item extends Model
         'brand_id',
         'subcategory_id',
     ];
+    public function Subcategory(){
+        return $this->belongsTo('App\Models\Subcategory');
+    }
+    public function Brand(){
+        return $this->belongsTo('App\Models\Brand');
+    }
 }

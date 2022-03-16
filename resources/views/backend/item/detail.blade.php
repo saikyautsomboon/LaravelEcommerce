@@ -58,12 +58,12 @@
                                         <tr>
 
                                             <td>Brand</td>
-                                            <td>{{ $item->brand_id }}</td>
+                                            <td>{{ $item->brand->name }}</td>
                                         </tr>
                                         <tr>
 
                                             <td>SubCategory</td>
-                                            <td>{{ $item->subcategory_id }}</td>
+                                            <td>{{ $item->subcategory->name }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
