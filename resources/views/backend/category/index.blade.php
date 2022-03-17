@@ -27,6 +27,7 @@
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Photo</th>
+                                    <th>Item Count</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                             {{-- <input type="text" value="{{ asset($category->photo) }}"> --}}
                                             <img src="{{ asset($category->photo) }}" width="100rem" height="100rem">
                                         </td>
+                                        <td>{{ count($category->items) }}</td>
                                         <td>
 
                                             <form action="{{ route('categories.destroy', $category->id) }}" method='POST'>

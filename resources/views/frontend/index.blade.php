@@ -5,16 +5,17 @@
     <main class="main">
         <div class="intro-slider-container mb-5">
             <div class="intro-slider owl-carousel owl-theme owl-nav-inside owl-light" data-toggle="owl" data-owl-options='{
-                            "dots": true,
-                            "nav": false,
-                            "responsive": {
-                                "1200": {
-                                    "nav": true,
-                                    "dots": false
+                                "dots": true,
+                                "nav": false,
+                                "responsive": {
+                                    "1200": {
+                                        "nav": true,
+                                        "dots": false
+                                    }
                                 }
-                            }
-                        }'>
-                <div class="intro-slide" style="background-image: url({{asset('lesson1/assets/images/demos/demo-4/slider/slide-1.png')}});">
+                            }'>
+                <div class="intro-slide"
+                    style="background-image: url({{ asset('lesson1/assets/images/demos/demo-4/slider/slide-1.png') }});">
                     <div class="container intro-content">
                         <div class="row justify-content-end">
                             <div class="col-auto col-sm-7 col-md-6 col-lg-5">
@@ -45,7 +46,8 @@
                 </div>
                 <!-- End .intro-slide -->
 
-                <div class="intro-slide" style="background-image: url({{asset ('lesson1/assets/images/demos/demo-4/slider/slide-2.png')}});">
+                <div class="intro-slide"
+                    style="background-image: url({{ asset('lesson1/assets/images/demos/demo-4/slider/slide-2.png') }});">
                     <div class="container intro-content">
                         <div class="row justify-content-end">
                             <div class="col-auto col-sm-7 col-md-6 col-lg-5">
@@ -92,7 +94,8 @@
                         <a href="category.html" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/1.png') }}" alt="Category image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/1.png') }}"
+                                        alt="Category image">
                                 </span>
                             </figure>
 
@@ -106,7 +109,8 @@
                         <a href="category.html" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/2.png') }}" alt="Category image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/2.png') }}"
+                                        alt="Category image">
                                 </span>
                             </figure>
 
@@ -120,7 +124,8 @@
                         <a href="category.html" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/3.png') }}" alt="Category image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/3.png') }}"
+                                        alt="Category image">
                                 </span>
                             </figure>
 
@@ -134,7 +139,8 @@
                         <a href="category.html" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/4.png') }}" alt="Category image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/4.png') }}"
+                                        alt="Category image">
                                 </span>
                             </figure>
 
@@ -148,7 +154,8 @@
                         <a href="category.html" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/5.png') }}" alt="Category image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/5.png') }}"
+                                        alt="Category image">
                                 </span>
                             </figure>
 
@@ -162,7 +169,8 @@
                         <a href="category.html" class="cat-block">
                             <figure>
                                 <span>
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/6.png') }}" alt="Category image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/cats/6.png') }}"
+                                        alt="Category image">
                                 </span>
                             </figure>
 
@@ -186,7 +194,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="banner banner-overlay banner-overlay-light">
                         <a href="#">
-                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-1.png') }}" alt="Banner">
+                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-1.png') }}"
+                                alt="Banner">
                         </a>
 
                         <div class="banner-content">
@@ -206,7 +215,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="banner banner-overlay banner-overlay-light">
                         <a href="#">
-                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-2.jpg') }}" alt="Banner">
+                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-2.jpg') }}"
+                                alt="Banner">
                         </a>
 
                         <div class="banner-content">
@@ -226,7 +236,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="banner banner-overlay banner-overlay-light">
                         <a href="#">
-                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-3.png') }}" alt="Banner">
+                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-3.png') }}"
+                                alt="Banner">
                         </a>
 
                         <div class="banner-content">
@@ -293,34 +304,34 @@
                 <div class="tab-pane p-0 fade show active" id="new-all-tab" role="tabpanel" aria-labelledby="new-all-link">
                     <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
                         data-owl-options='{
-                                    "nav": true,
-                                    "dots": true,
-                                    "margin": 20,
-                                    "loop": false,
-                                    "responsive": {
-                                        "0": {
-                                            "items":2
-                                        },
-                                        "480": {
-                                            "items":2
-                                        },
-                                        "768": {
-                                            "items":3
-                                        },
-                                        "992": {
-                                            "items":4
-                                        },
-                                        "1200": {
-                                            "items":5
+                                        "nav": true,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5
+                                            }
                                         }
-                                    }
-                                }'>
+                                    }'>
                         <div class="product product-2">
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -366,8 +377,8 @@
                         <div class="product product-2">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="{{ asset ('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -415,8 +426,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-new">New</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -475,8 +486,8 @@
                                 <span class="product-label label-circle label-top">Top</span>
                                 <span class="product-label label-circle label-sale">Sale</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -534,8 +545,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -583,8 +594,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg')}}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -633,34 +644,34 @@
                 <div class="tab-pane p-0 fade" id="new-tv-tab" role="tabpanel" aria-labelledby="new-tv-link">
                     <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
                         data-owl-options='{
-                                    "nav": true,
-                                    "dots": true,
-                                    "margin": 20,
-                                    "loop": false,
-                                    "responsive": {
-                                        "0": {
-                                            "items":2
-                                        },
-                                        "480": {
-                                            "items":2
-                                        },
-                                        "768": {
-                                            "items":3
-                                        },
-                                        "992": {
-                                            "items":4
-                                        },
-                                        "1200": {
-                                            "items":5
+                                        "nav": true,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5
+                                            }
                                         }
-                                    }
-                                }'>
+                                    }'>
                         <div class="product product-2">
                             <figure class="product-media">
                                 <span class="product-label label-circle label-new">New</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg')}}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -717,8 +728,8 @@
                         <div class="product product-2">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -767,8 +778,8 @@
                                 <span class="product-label label-circle label-top">Top</span>
                                 <span class="product-label label-circle label-sale">Sale</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -826,8 +837,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg')}}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -875,8 +886,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -925,34 +936,34 @@
                 <div class="tab-pane p-0 fade" id="new-computers-tab" role="tabpanel" aria-labelledby="new-computers-link">
                     <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
                         data-owl-options='{
-                                    "nav": true,
-                                    "dots": true,
-                                    "margin": 20,
-                                    "loop": false,
-                                    "responsive": {
-                                        "0": {
-                                            "items":2
-                                        },
-                                        "480": {
-                                            "items":2
-                                        },
-                                        "768": {
-                                            "items":3
-                                        },
-                                        "992": {
-                                            "items":4
-                                        },
-                                        "1200": {
-                                            "items":5
+                                        "nav": true,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5
+                                            }
                                         }
-                                    }
-                                }'>
+                                    }'>
                         <div class="product product-2">
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1000,8 +1011,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1048,8 +1059,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-new">New</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1106,8 +1117,8 @@
                         <div class="product product-2">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="{{ asset('lessson1/assets/images/demos/demo-4/products/product-2.jpg')}}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lessson1/assets/images/demos/demo-4/products/product-2.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1156,8 +1167,8 @@
                                 <span class="product-label label-circle label-top">Top</span>
                                 <span class="product-label label-circle label-sale">Sale</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1217,34 +1228,34 @@
                 <div class="tab-pane p-0 fade" id="new-phones-tab" role="tabpanel" aria-labelledby="new-phones-link">
                     <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
                         data-owl-options='{
-                                    "nav": true,
-                                    "dots": true,
-                                    "margin": 20,
-                                    "loop": false,
-                                    "responsive": {
-                                        "0": {
-                                            "items":2
-                                        },
-                                        "480": {
-                                            "items":2
-                                        },
-                                        "768": {
-                                            "items":3
-                                        },
-                                        "992": {
-                                            "items":4
-                                        },
-                                        "1200": {
-                                            "items":5
+                                        "nav": true,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5
+                                            }
                                         }
-                                    }
-                                }'>
+                                    }'>
                         <div class="product product-2">
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg')}}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1290,8 +1301,8 @@
                         <div class="product product-2">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1339,8 +1350,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-new">New</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1398,8 +1409,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1447,8 +1458,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1496,8 +1507,8 @@
                                 <span class="product-label label-circle label-top">Top</span>
                                 <span class="product-label label-circle label-sale">Sale</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1557,35 +1568,35 @@
                 <div class="tab-pane p-0 fade" id="new-watches-tab" role="tabpanel" aria-labelledby="new-watches-link">
                     <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
                         data-owl-options='{
-                                    "nav": true,
-                                    "dots": true,
-                                    "margin": 20,
-                                    "loop": false,
-                                    "responsive": {
-                                        "0": {
-                                            "items":2
-                                        },
-                                        "480": {
-                                            "items":2
-                                        },
-                                        "768": {
-                                            "items":3
-                                        },
-                                        "992": {
-                                            "items":4
-                                        },
-                                        "1200": {
-                                            "items":5
+                                        "nav": true,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5
+                                            }
                                         }
-                                    }
-                                }'>
+                                    }'>
                         <div class="product product-2">
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <span class="product-label label-circle label-sale">Sale</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-4.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1643,8 +1654,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1690,8 +1701,8 @@
                         <div class="product product-2">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1739,8 +1750,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-new">New</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1800,34 +1811,34 @@
                 <div class="tab-pane p-0 fade" id="new-acc-tab" role="tabpanel" aria-labelledby="new-acc-link">
                     <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow" data-toggle="owl"
                         data-owl-options='{
-                                    "nav": true,
-                                    "dots": true,
-                                    "margin": 20,
-                                    "loop": false,
-                                    "responsive": {
-                                        "0": {
-                                            "items":2
-                                        },
-                                        "480": {
-                                            "items":2
-                                        },
-                                        "768": {
-                                            "items":3
-                                        },
-                                        "992": {
-                                            "items":4
-                                        },
-                                        "1200": {
-                                            "items":5
+                                        "nav": true,
+                                        "dots": true,
+                                        "margin": 20,
+                                        "loop": false,
+                                        "responsive": {
+                                            "0": {
+                                                "items":2
+                                            },
+                                            "480": {
+                                                "items":2
+                                            },
+                                            "768": {
+                                                "items":3
+                                            },
+                                            "992": {
+                                                "items":4
+                                            },
+                                            "1200": {
+                                                "items":5
+                                            }
                                         }
-                                    }
-                                }'>
+                                    }'>
                         <div class="product product-2">
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1874,8 +1885,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}}}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-5.jpg') }}}}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1923,8 +1934,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-top">Top</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-1.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -1970,8 +1981,8 @@
                         <div class="product product-2">
                             <figure class="product-media">
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-2.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -2019,8 +2030,8 @@
                             <figure class="product-media">
                                 <span class="product-label label-circle label-new">New</span>
                                 <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}" alt="Product image"
-                                        class="product-image">
+                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
+                                        alt="Product image" class="product-image">
                                 </a>
 
                                 <div class="product-action-vertical">
@@ -2086,8 +2097,10 @@
         <!-- End .mb-6 -->
 
         <div class="container">
-            <div class="cta cta-border mb-5" style="background-image: url({{ asset('lesson1/assets/images/demos/demo-4/bg-1.jpg') }});">
-                <img src="{{ asset('lesson1/assets/images/demos/demo-4/camera.png') }}" alt="camera" class="cta-img">
+            <div class="cta cta-border mb-5"
+                style="background-image: url({{ asset('lesson1/assets/images/demos/demo-4/bg-1.jpg') }});">
+                <img src="{{ asset('lesson1/assets/images/demos/demo-4/camera.png') }}" alt="camera"
+                    class="cta-img">
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         <div class="cta-content">
@@ -2119,7 +2132,8 @@
 
             <div class="row">
                 <div class="col-lg-6 deal-col">
-                    <div class="deal" style="background-image: url('{{ asset('lesson1/assets/images/demos/demo-4/deal/bg-1.jpg') }}');">
+                    <div class="deal"
+                        style="background-image: url('{{ asset('lesson1/assets/images/demos/demo-4/deal/bg-1.jpg') }}');">
                         <div class="deal-top">
                             <h2>Deal of the Day.</h2>
                             <h4>Limited quantities. </h4>
@@ -2153,7 +2167,8 @@
                 <!-- End .col-lg-6 -->
 
                 <div class="col-lg-6 deal-col">
-                    <div class="deal" style="background-image: url('{{ asset('lesson1/assets/images/demos/demo-4/deal/bg-2.jpg') }}');">
+                    <div class="deal"
+                        style="background-image: url('{{ asset('lesson1/assets/images/demos/demo-4/deal/bg-2.jpg') }}');">
                         <div class="deal-top">
                             <h2>Your Exclusive Offers.</h2>
                             <h4>Sign in to see amazing deals.</h4>
@@ -2198,30 +2213,30 @@
         <div class="container">
             <hr class="mb-0">
             <div class="owl-carousel mt-5 mb-5 owl-simple" data-toggle="owl" data-owl-options='{
-                            "nav": false,
-                            "dots": false,
-                            "margin": 30,
-                            "loop": false,
-                            "responsive": {
-                                "0": {
-                                    "items":2
-                                },
-                                "420": {
-                                    "items":3
-                                },
-                                "600": {
-                                    "items":4
-                                },
-                                "900": {
-                                    "items":5
-                                },
-                                "1024": {
-                                    "items":6
+                                "nav": false,
+                                "dots": false,
+                                "margin": 30,
+                                "loop": false,
+                                "responsive": {
+                                    "0": {
+                                        "items":2
+                                    },
+                                    "420": {
+                                        "items":3
+                                    },
+                                    "600": {
+                                        "items":4
+                                    },
+                                    "900": {
+                                        "items":5
+                                    },
+                                    "1024": {
+                                        "items":6
+                                    }
                                 }
-                            }
-                        }'>
+                            }'>
                 <a href="#" class="brand">
-                    <img src="{{asset('lesson1/assets/images/brands/1.png')}}" alt="Brand Name">
+                    <img src="{{ asset('lesson1/assets/images/brands/1.png') }}" alt="Brand Name">
                 </a>
 
                 <a href="#" class="brand">
@@ -2229,7 +2244,7 @@
                 </a>
 
                 <a href="#" class="brand">
-                    <img src="{{ asset('lesson1/assets/images/brands/3.png')}}" alt="Brand Name">
+                    <img src="{{ asset('lesson1/assets/images/brands/3.png') }}" alt="Brand Name">
                 </a>
 
                 <a href="#" class="brand">
@@ -2237,7 +2252,7 @@
                 </a>
 
                 <a href="#" class="brand">
-                    <img src="{{ asset('lesson1/assets/images/brands/5.png')}}" alt="Brand Name">
+                    <img src="{{ asset('lesson1/assets/images/brands/5.png') }}" alt="Brand Name">
                 </a>
 
                 <a href="#" class="brand">
@@ -2284,7 +2299,8 @@
                     <div class="col-xl-5col d-none d-xl-block">
                         <div class="banner">
                             <a href="#">
-                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-4.jpg')}}" alt="banner">
+                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/banners/banner-4.jpg') }}"
+                                    alt="banner">
                             </a>
                         </div>
                         <!-- End .banner -->
@@ -2297,25 +2313,25 @@
                                 aria-labelledby="trending-top-link">
                                 <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow"
                                     data-toggle="owl" data-owl-options='{
-                                                "nav": true,
-                                                "dots": false,
-                                                "margin": 20,
-                                                "loop": false,
-                                                "responsive": {
-                                                    "0": {
-                                                        "items":2
-                                                    },
-                                                    "480": {
-                                                        "items":2
-                                                    },
-                                                    "768": {
-                                                        "items":3
-                                                    },
-                                                    "992": {
-                                                        "items":4
+                                                    "nav": true,
+                                                    "dots": false,
+                                                    "margin": 20,
+                                                    "loop": false,
+                                                    "responsive": {
+                                                        "0": {
+                                                            "items":2
+                                                        },
+                                                        "480": {
+                                                            "items":2
+                                                        },
+                                                        "768": {
+                                                            "items":3
+                                                        },
+                                                        "992": {
+                                                            "items":4
+                                                        }
                                                     }
-                                                }
-                                            }'>
+                                                }'>
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-top">Top</span>
@@ -2429,7 +2445,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-8.jpg')}}"
+                                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-8.jpg') }}"
                                                     alt="Product image" class="product-image">
                                             </a>
 
@@ -2541,7 +2557,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg')}}"
+                                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
                                                     alt="Product image" class="product-image">
                                             </a>
 
@@ -2604,30 +2620,30 @@
                                 aria-labelledby="trending-best-link">
                                 <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow"
                                     data-toggle="owl" data-owl-options='{
-                                                "nav": true,
-                                                "dots": false,
-                                                "margin": 20,
-                                                "loop": false,
-                                                "responsive": {
-                                                    "0": {
-                                                        "items":2
-                                                    },
-                                                    "480": {
-                                                        "items":2
-                                                    },
-                                                    "768": {
-                                                        "items":3
-                                                    },
-                                                    "992": {
-                                                        "items":4
+                                                    "nav": true,
+                                                    "dots": false,
+                                                    "margin": 20,
+                                                    "loop": false,
+                                                    "responsive": {
+                                                        "0": {
+                                                            "items":2
+                                                        },
+                                                        "480": {
+                                                            "items":2
+                                                        },
+                                                        "768": {
+                                                            "items":3
+                                                        },
+                                                        "992": {
+                                                            "items":4
+                                                        }
                                                     }
-                                                }
-                                            }'>
+                                                }'>
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="{{asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg')}}"
+                                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
                                                     alt="Product image" class="product-image">
                                             </a>
 
@@ -2901,25 +2917,25 @@
                                 aria-labelledby="trending-sale-link">
                                 <div class="owl-carousel owl-full carousel-equal-height carousel-with-shadow"
                                     data-toggle="owl" data-owl-options='{
-                                                "nav": true,
-                                                "dots": false,
-                                                "margin": 20,
-                                                "loop": false,
-                                                "responsive": {
-                                                    "0": {
-                                                        "items":2
-                                                    },
-                                                    "480": {
-                                                        "items":2
-                                                    },
-                                                    "768": {
-                                                        "items":3
-                                                    },
-                                                    "992": {
-                                                        "items":4
+                                                    "nav": true,
+                                                    "dots": false,
+                                                    "margin": 20,
+                                                    "loop": false,
+                                                    "responsive": {
+                                                        "0": {
+                                                            "items":2
+                                                        },
+                                                        "480": {
+                                                            "items":2
+                                                        },
+                                                        "768": {
+                                                            "items":3
+                                                        },
+                                                        "992": {
+                                                            "items":4
+                                                        }
                                                     }
-                                                }
-                                            }'>
+                                                }'>
                                     <div class="product product-2">
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
@@ -3093,7 +3109,7 @@
                                         <figure class="product-media">
                                             <span class="product-label label-circle label-new">New</span>
                                             <a href="product.html">
-                                                <img src="{{asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg')}}"
+                                                <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-3.jpg') }}"
                                                     alt="Product image" class="product-image">
                                             </a>
 
@@ -3183,467 +3199,71 @@
 
             <div class="products">
                 <div class="row justify-content-center">
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <span class="product-label label-circle label-sale">Sale</span>
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-10.jpg')}}" alt="Product image"
-                                        class="product-image">
-                                </a>
+                    @foreach ($items as $item)
+                        <div class="col-4 col-md-4 col-lg-3">
+                            <div class="product product-2">
+                                <figure class="product-media">
+                                    <span class="product-label label-circle label-sale">Sale</span>
+                                    <a href="product.html">
+                                        <img src='{{asset($item->photo)}}' alt="Product image" class="product-image">
+                                    </a>
 
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Headphones</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Beats by Dr. Dre Wireless Headphones</a>
-                                </h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    <span class="new-price">$279.99</span>
-                                    <span class="old-price">Was $349.99</span>
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 40%;"></div>
-                                        <!-- End .ratings-val -->
+                                    <div class="product-action-vertical">
+                                        <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
                                     </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 4 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
+                                    <!-- End .product-action -->
 
-                                <div class="product-nav product-nav-dots">
-                                    <a href="#" class="active" style="background: #666666;"><span
-                                            class="sr-only">Color name</span></a>
-                                    <a href="#" style="background: #ff887f;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #6699cc;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #f3dbc1;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                            name</span></a>
-                                </div>
-                                <!-- End .product-nav -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-11.jpg')}}" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Cameras & Camcorders</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">GoPro - HERO7 Black HD Waterproof
-                                        Action</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $349.99
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 60%;"></div>
-                                        <!-- End .ratings-val -->
+                                    <div class="product-action">
+                                        <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
+                                                cart</span></a>
+                                        <a href="popup/quickView.html" class="btn-product btn-quickview"
+                                            title="Quick view"><span>quick view</span></a>
                                     </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 2 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <!-- End .product-action -->
+                                </figure>
+                                <!-- End .product-media -->
 
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <span class="product-label label-circle label-new">New</span>
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-12.jpg') }}" alt="Product image"
-                                        class="product-image">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-12-2.jpg')}}" alt="Product image"
-                                        class="product-image-hover">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Smartwatches</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Apple - Apple Watch Series 3 with White
-                                        Sport Band</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $214.49
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 0%;"></div>
-                                        <!-- End .ratings-val -->
+                                <div class="product-body">
+                                    <div class="product-cat">
+                                        <a href="#">{{ $item->subcategory->name }}</a>
                                     </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 0 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
-
-                                <div class="product-nav product-nav-dots">
-                                    <a href="#" class="active" style="background: #e2e2e2;"><span
-                                            class="sr-only">Color name</span></a>
-                                    <a href="#" style="background: #333333;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #f2bc9e;"><span class="sr-only">Color
-                                            name</span></a>
-                                </div>
-                                <!-- End .product-nav -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-13.jpg') }}" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Laptops</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Lenovo - 330-15IKBR 15.6"</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    <span class="out-price">$339.99</span>
-                                    <span class="out-text">Out Of Stock</span>
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 60%;"></div>
-                                        <!-- End .ratings-val -->
+                                    <!-- End .product-cat -->
+                                    <h3 class="product-title"><a href="product.html">{{ $item->description }}</a>
+                                    </h3>
+                                    <!-- End .product-title -->
+                                    @if($item->discount >0)
+                                    <div class="product-price">
+                                        <span class="new-price">{{ $item->price }} ks</span>
+                                        <span class="old-price">Discount {{ $item->discount }}ks</span>
                                     </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 11 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    @else
+                                    <div class="product-price">
+                                        <span class="new-price">{{ $item->price }} ks</span>
 
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="{{asset('lesson1/assets/images/demos/demo-4/products/product-14.jpg')}}" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Digital Cameras</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Sony - Alpha a5100 Mirrorless Camera</a>
-                                </h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $499.99
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 50%;"></div>
-                                        <!-- End .ratings-val -->
                                     </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 11 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    @endif
+                                    <!-- End .product-price -->
+                                    <!-- End .rating-container -->
 
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-15.jpg') }}" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Laptops</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Home Mini - Smart Speaker with Google
-                                        Assistant</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $49.00
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 60%;"></div>
-                                        <!-- End .ratings-val -->
+                                    <div class="product-nav product-nav-dots">
+                                        <a href="#" class="active" style="background: #666666;"><span
+                                                class="sr-only">Color name</span></a>
+                                        <a href="#" style="background: #ff887f;"><span class="sr-only">Color
+                                                name</span></a>
+                                        <a href="#" style="background: #6699cc;"><span class="sr-only">Color
+                                                name</span></a>
+                                        <a href="#" style="background: #f3dbc1;"><span class="sr-only">Color
+                                                name</span></a>
+                                        <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
+                                                name</span></a>
                                     </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 24 Reviews )</span>
+                                    <!-- End .product-nav -->
                                 </div>
-                                <!-- End .rating-container -->
-
-                                <div class="product-nav product-nav-dots">
-                                    <a href="#" class="active" style="background: #ef837b;"><span
-                                            class="sr-only">Color name</span></a>
-                                    <a href="#" style="background: #333333;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #e2e2e2;"><span class="sr-only">Color
-                                            name</span></a>
-                                </div>
-                                <!-- End .product-nav -->
+                                <!-- End .product-body -->
                             </div>
-                            <!-- End .product-body -->
+                            <!-- End .product -->
                         </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <span class="product-label label-circle label-sale">Sale</span>
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-16.jpg') }}" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Audio</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">WONDERBOOM Portable Bluetooth
-                                        Speaker</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    <span class="new-price">$99.99</span>
-                                    <span class="old-price">Was $129.99</span>
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 40%;"></div>
-                                        <!-- End .ratings-val -->
-                                    </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 4 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
-
-                                <div class="product-nav product-nav-dots">
-                                    <a href="#" class="active" style="background: #666666;"><span
-                                            class="sr-only">Color name</span></a>
-                                    <a href="#" style="background: #ff887f;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #6699cc;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #f3dbc1;"><span class="sr-only">Color
-                                            name</span></a>
-                                    <a href="#" style="background: #eaeaec;"><span class="sr-only">Color
-                                            name</span></a>
-                                </div>
-                                <!-- End .product-nav -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
-                    <!-- End .col-sm-6 col-md-4 col-lg-3 -->
-
-                    <div class="col-6 col-md-4 col-lg-3">
-                        <div class="product product-2">
-                            <figure class="product-media">
-                                <a href="product.html">
-                                    <img src="{{ asset('lesson1/assets/images/demos/demo-4/products/product-17.jpg') }}" alt="Product image"
-                                        class="product-image">
-                                </a>
-
-                                <div class="product-action-vertical">
-                                    <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
-                                </div>
-                                <!-- End .product-action -->
-
-                                <div class="product-action">
-                                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                                            cart</span></a>
-                                    <a href="popup/quickView.html" class="btn-product btn-quickview"
-                                        title="Quick view"><span>quick view</span></a>
-                                </div>
-                                <!-- End .product-action -->
-                            </figure>
-                            <!-- End .product-media -->
-
-                            <div class="product-body">
-                                <div class="product-cat">
-                                    <a href="#">Smart Home</a>
-                                </div>
-                                <!-- End .product-cat -->
-                                <h3 class="product-title"><a href="product.html">Google - Home Hub with Google
-                                        Assistant</a></h3>
-                                <!-- End .product-title -->
-                                <div class="product-price">
-                                    $149.00
-                                </div>
-                                <!-- End .product-price -->
-                                <div class="ratings-container">
-                                    <div class="ratings">
-                                        <div class="ratings-val" style="width: 60%;"></div>
-                                        <!-- End .ratings-val -->
-                                    </div>
-                                    <!-- End .ratings -->
-                                    <span class="ratings-text">( 2 Reviews )</span>
-                                </div>
-                                <!-- End .rating-container -->
-                            </div>
-                            <!-- End .product-body -->
-                        </div>
-                        <!-- End .product -->
-                    </div>
+                    @endforeach
                     <!-- End .col-sm-6 col-md-4 col-lg-3 -->
                 </div>
                 <!-- End .row -->

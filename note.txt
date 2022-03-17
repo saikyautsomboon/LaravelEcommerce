@@ -52,3 +52,19 @@ Add Deafult Authentication
 - php artisan ui bootstrap --auth
 - npm install
 - npm run dev
+
+Category
+    - 1
+    - 2
+Subcategory
+    - 1 1
+    - 2 1
+    - 3 2
+Items
+    1 1
+    2 1
+    3 3
+    4 3
+    5 2
+1,2,5 (1) Category 1 အခန်း hasmanythrow ကိုသံုးမယ်
+3,4 (2) Category 2 အခန်း
