@@ -76,8 +76,17 @@ vendor public - php artisan vendor:publish --provider="Spatie\Permission\Permiss
 php artisan migrate
 
 
-For Email Verfication
+For Email Verfication (Middleware)
 ---------------------------
 User Model မှာ   -implements MustVerifyEmail ထည့်မယ်
 HomeControllerမှာ - $this->middleware(['auth','verified']); ထည့်မယ်
 web.php မှာ      - Auth::routes(['verify' => true]); ထည့်မယ်
+-register in Mailtrap.io
+-integration in .env files
+-check mail inboxes
+
+Admin or Customer
+--------------------------
+Route::middleware('role:admin')->group(function () {
+
+});
