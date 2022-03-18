@@ -1,4 +1,5 @@
 <?php
+
 use App\Http\Controllers\BackendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
@@ -18,16 +19,19 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/',[FirstController::class,'index'])->name('home');
+Route::get('/', [FirstController::class, 'index'])->name('home');
 
-Route::get('dashboard',[BackendController::class,'dashboard'])->name('dashboard');
+Route::get('dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
 // route for backend
-Route::resource('categories',CategoryController::class);
-Route::resource('brands',BrandController::class);
-Route::resource('subcategories',SubcategoryController::class);
-Route::resource('items',ItemController::class);
+
+Route::middleware('role:admin')->group(function () {
+    Route::resource('categories', CategoryController::class);
+    Route::resource('brands', BrandController::class);
+    Route::resource('subcategories', SubcategoryController::class);
+    Route::resource('items', ItemController::class);
+});
 // end route for backend
-Auth::routes();
+Auth::routes(['verify' => true]);
 // auth home page
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // end auth home page

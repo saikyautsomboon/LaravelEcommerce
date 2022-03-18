@@ -74,3 +74,10 @@ Role and Permission အတွက်
 package install - composer require spatie/laravel-permission
 vendor public - php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
 php artisan migrate
+
+
+For Email Verfication
+---------------------------
+User Model မှာ   -implements MustVerifyEmail ထည့်မယ်
+HomeControllerမှာ - $this->middleware(['auth','verified']); ထည့်မယ်
+web.php မှာ      - Auth::routes(['verify' => true]); ထည့်မယ်
