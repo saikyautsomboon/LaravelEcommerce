@@ -68,3 +68,9 @@ Items
     5 2
 1,2,5 (1) Category 1 အခန်း hasmanythrow ကိုသံုးမယ်
 3,4 (2) Category 2 အခန်း
+
+Role and Permission အတွက်
+----------------------------------
+package install - composer require spatie/laravel-permission
+vendor public - php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
