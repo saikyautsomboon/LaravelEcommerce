@@ -21,10 +21,11 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [FirstController::class, 'index'])->name('home');
 
-Route::get('dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
+
 // route for backend
 
 Route::middleware('role:admin')->group(function () {
+    Route::get('dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
     Route::resource('categories', CategoryController::class);
     Route::resource('brands', BrandController::class);
     Route::resource('subcategories', SubcategoryController::class);
