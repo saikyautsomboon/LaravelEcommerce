@@ -13,9 +13,12 @@
     <meta name="description" content="Lesson1 eCommerce Template">
     <meta name="author" content="p-themes">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{  asset('lesson1/assets/images/icons/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('lesson1/assets/images/icons/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('lesson1/assets/images/icons/favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{{ asset('lesson1/assets/images/icons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{{ asset('lesson1/assets/images/icons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('lesson1/assets/images/icons/favicon-16x16.png') }}">
     <link rel="manifest" href="{{ asset('lesson1/assets/images/icons/site.html') }}">
     <link rel="mask-icon" href="{{ asset('lesson1/assets/images/icons/safari-pinned-tab.svg') }}" color="#666666">
     <link rel="shortcut icon" href="{{ asset('lesson1/assets/images/icons/favicon.ico') }}">
@@ -24,7 +27,8 @@
     <meta name="msapplication-TileColor" content="#cc9966">
     <meta name="msapplication-config" content="{{ asset('lesson1/assets/images/icons/browserconfig.xml') }}">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="{{ asset('lesson1/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('lesson1/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css') }}">
     <!-- Plugins CSS File -->
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/plugins/owl-carousel/owl.carousel.css') }}">
@@ -70,9 +74,38 @@
                                             </div><!-- End .header-menu -->
                                         </div>
                                     </li>
-                                    <li><a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a></li>
-                                </ul>
+                                    <li>
+
+                                        @guest
+                                            <a href="#signin-modal" data-toggle="modal">Sign in / Sign up</a>
+                                        @else
+                                        <li class="nav-item dropdown">
+
+                                            <a id="navbarDropdown" class=" dropdown-toggle" href="#" role="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }}
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                <a class=" dropdown-item" href="#">
+                                                    Order History
+                                                </a>
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                                                    document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </li>
+                                    @endguest
                             </li>
+                        </ul>
+                        </li>
                         </ul><!-- End .top-menu -->
                     </div><!-- End .header-right -->
 
@@ -88,7 +121,8 @@
                         </button>
 
                         <a href="index.html" class="logo">
-                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/logo.png') }}" alt="Molla Logo" width="105" height="25">
+                            <img src="{{ asset('lesson1/assets/images/demos/demo-4/logo.png') }}" alt="Molla Logo"
+                                width="105" height="25">
                         </a>
                     </div><!-- End .header-left -->
 
@@ -231,23 +265,15 @@
                             <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" data-display="static"
                                 title="Browse Categories">
-                                Browse Categories <i class="icon-angle-down"></i>
+                                Categories <i class="icon-angle-down"></i>
                             </a>
 
                             <div class="dropdown-menu">
                                 <nav class="side-nav">
                                     <ul class="menu-vertical sf-arrows">
-                                        <li class="item-lead"><a href="#">Daily offers</a></li>
-                                        <li class="item-lead"><a href="#">Gift Ideas</a></li>
-                                        <li><a href="#">Beds</a></li>
-                                        <li><a href="#">Lighting</a></li>
-                                        <li><a href="#">Sofas & Sleeper sofas</a></li>
-                                        <li><a href="#">Storage</a></li>
-                                        <li><a href="#">Armchairs & Chaises</a></li>
-                                        <li><a href="#">Decoration </a></li>
-                                        <li><a href="#">Kitchen Cabinets</a></li>
-                                        <li><a href="#">Coffee & Tables</a></li>
-                                        <li><a href="#">Outdoor Furniture </a></li>
+                                        {{-- this is to show categories go to CategoryComponent.php  --}}
+                                            <x-category-component></x-category-component>
+                                        {{-- end show categories  --}}
                                     </ul><!-- End .menu-vertical -->
                                 </nav><!-- End .side-nav -->
                             </div><!-- End .dropdown-menu -->
@@ -328,7 +354,8 @@
 
                                                         <div class="banner-content banner-content-top">
                                                             <div class="banner-title text-white">Last
-                                                                <br>Chance<br><span><strong>Sale</strong></span></div>
+                                                                <br>Chance<br><span><strong>Sale</strong></span>
+                                                            </div>
                                                             <!-- End .banner-title -->
                                                         </div><!-- End .banner-content -->
                                                     </a>
@@ -477,11 +504,11 @@
             </div><!-- End .header-bottom -->
         </header><!-- End .header -->
 
-        {{-- body  --}}
+        {{-- body --}}
 
         @yield('content')
 
-        {{-- end body  --}}
+        {{-- end body --}}
         <footer class="footer">
             <div class="icon-boxes-container bg-transparent">
                 <div class="container">
@@ -687,18 +714,16 @@
             <div class="social-icons">
                 <a href="#" class="social-icon" target="_blank" title="Facebook"><i
                         class="icon-facebook-f"></i></a>
-                <a href="#" class="social-icon" target="_blank" title="Twitter"><i
-                        class="icon-twitter"></i></a>
+                <a href="#" class="social-icon" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
                 <a href="#" class="social-icon" target="_blank" title="Instagram"><i
                         class="icon-instagram"></i></a>
-                <a href="#" class="social-icon" target="_blank" title="Youtube"><i
-                        class="icon-youtube"></i></a>
+                <a href="#" class="social-icon" target="_blank" title="Youtube"><i class="icon-youtube"></i></a>
             </div><!-- End .social-icons -->
         </div><!-- End .mobile-menu-wrapper -->
     </div><!-- End .mobile-menu-container -->
 
     <!-- Sign in / Register Modal -->
-        <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
@@ -719,126 +744,111 @@
                                 </li>
                             </ul>
                             <div class="tab-content" id="tab-content-5">
+
+                                {{-- This is Login Form  --}}
                                 <div class="tab-pane fade show active" id="signin" role="tabpanel"
                                     aria-labelledby="signin-tab">
-                                    <form action="#">
+                                    <form method="POST" action="{{ route('login') }}">
+                                        @csrf
                                         <div class="form-group">
-                                            <label for="singin-email">Username or email address *</label>
-                                            <input type="text" class="form-control" id="singin-email"
-                                                name="singin-email" required>
+                                            <label for="singin-email">Email address </label>
+                                            <input id="email" type="email"
+                                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                                value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div><!-- End .form-group -->
 
                                         <div class="form-group">
-                                            <label for="singin-password">Password *</label>
-                                            <input type="password" class="form-control" id="singin-password"
-                                                name="singin-password" required>
+                                            <label for="singin-password">Password </label>
+                                            <input id="password" type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password" required autocomplete="current-password">
+
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
-                                                <span>LOG IN</span>
-                                                <i class="icon-long-arrow-right"></i>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="form-check-input" type="checkbox" name="remember"
+                                                    id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                <label class="form-check-label" for="remember">
+                                                    {{ __('Remember Me') }}
+                                                </label>
+                                            </div><!-- End .custom-checkbox -->
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Login') }}
                                             </button>
 
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                    id="signin-remember">
-                                                <label class="custom-control-label" for="signin-remember">Remember
-                                                    Me</label>
-                                            </div><!-- End .custom-checkbox -->
-
-                                            <a href="#" class="forgot-link">Forgot Your Password?</a>
+                                            @if (Route::has('password.request'))
+                                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                    {{ __('Forgot Your Password?') }}
+                                                </a>
+                                            @endif
                                         </div><!-- End .form-footer -->
                                     </form>
-                                    <div class="form-choice">
-                                        <p class="text-center">or sign in with</p>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <a href="#" class="btn btn-login btn-g">
-                                                    <i class="icon-google"></i>
-                                                    Login With Google
-                                                </a>
-                                            </div><!-- End .col-6 -->
-                                            <div class="col-sm-6">
-                                                <a href="#" class="btn btn-login btn-f">
-                                                    <i class="icon-facebook-f"></i>
-                                                    Login With Facebook
-                                                </a>
-                                            </div><!-- End .col-6 -->
-                                        </div><!-- End .row -->
-                                    </div><!-- End .form-choice -->
                                 </div><!-- .End .tab-pane -->
-                                {{-- This is Register  --}}
+
+
+                                {{-- This is Register --}}
                                 <div class="tab-pane fade" id="register" role="tabpanel"
                                     aria-labelledby="register-tab">
-                                    <form action="#">
+
+                                    <form method="POST" action="{{ route('register') }}">
+                                        @csrf
+
+
                                         <div class="form-group">
-                                            <label for="register-email">Your email address </label>
-                                            <input type="email" class="form-control" id="register-email"
-                                                name="register-email" placeholder='gg@gmail.com' required>
+                                            <label for="register-email">Name</label>
+                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder='Enter Your name'>
+                                                @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div><!-- End .form-group -->
 
                                         <div class="form-group">
                                             <label for="register-name">Name</label>
-                                            <input type="text" class="form-control" id="register-name"
-                                                name="register-name" placeholder='Enter Your Name' required>
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="shop@gmail.com">
+
+                                            @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div><!-- End .form-group -->
 
                                         <div class="form-group">
                                             <label for="register-password">Password </label>
-                                            <input type="password" class="form-control" id="register-password"
-                                                name="register-password" placeholder="Enter Your password" required>
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter Your password">
+
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div><!-- End .form-group -->
 
                                         <div class="form-group">
                                             <label for="register-cpassword">Confirm Password </label>
-                                            <input type="cpassword" class="form-control" id="register-cpassword"
-                                                name="register-cpassword" placeholder="Enter Your password Again"  required>
-                                        </div><!-- End .form-group -->
-
-                                        <div class="form-group">
-                                            <label for="register-Phoneno">Phone No</label>
-                                            <input type="Phoneno" class="form-control" id="register-Phoneno"
-                                                name="register-Phoneno" placeholder='Enter Your Phone Number' required>
-                                        </div><!-- End .form-group -->
-
-                                        <div class="form-group">
-                                            <label for="register-address">Address</label>
-                                            <textarea class="form-control" id="register-address"
-                                                name="register-address" required></textarea>
+                                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Enter Your Password Again">
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
-                                                <span>SIGN UP</span>
-                                                <i class="icon-long-arrow-right"></i>
+                                            <button type="submit" class="btn btn-primary">
+                                                {{ __('Register') }}
                                             </button>
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                    id="register-policy" required>
-                                                <label class="custom-control-label" for="register-policy">I agree to
-                                                    the <a href="#">privacy policy</a> *</label>
-                                            </div><!-- End .custom-checkbox -->
                                         </div><!-- End .form-footer -->
                                     </form>
-                                    <div class="form-choice">
-                                        <p class="text-center">or sign in with</p>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <a href="#" class="btn btn-login btn-g">
-                                                    <i class="icon-google"></i>
-                                                    Login With Google
-                                                </a>
-                                            </div><!-- End .col-6 -->
-                                            <div class="col-sm-6">
-                                                <a href="#" class="btn btn-login  btn-f">
-                                                    <i class="icon-facebook-f"></i>
-                                                    Login With Facebook
-                                                </a>
-                                            </div><!-- End .col-6 -->
-                                        </div><!-- End .row -->
-                                    </div><!-- End .form-choice -->
                                 </div><!-- .End .tab-pane Register -->
                             </div><!-- End .tab-content -->
                         </div><!-- End .form-tab -->

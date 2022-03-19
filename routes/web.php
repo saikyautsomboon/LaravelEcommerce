@@ -19,9 +19,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [FirstController::class, 'index'])->name('home');
-
-
+Route::get('/', [FirstController::class, 'index'])->name('frontendpage');
+Route::get('/productdetail',[FirstController::class, 'productdetail'])->name('productdetailpage');
 // route for backend
 
 Route::middleware('role:admin')->group(function () {

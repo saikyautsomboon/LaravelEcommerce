@@ -113,7 +113,12 @@
                     </li>
                     <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a>
                     </li>
-                    <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a>
+                    <li><a class="dropdown-item" href="#" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-lg"></i>
+                            Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </li>

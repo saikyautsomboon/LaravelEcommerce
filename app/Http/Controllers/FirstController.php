@@ -10,5 +10,7 @@ class FirstController extends Controller
         $items=Item::all();
         return view('frontend.index', compact('items'));
     }
-
+    public function productdetail(){
+        return view('frontend.product-detail');
+    }
 }
