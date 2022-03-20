@@ -1,5 +1,5 @@
 @foreach ($items as $item)
-    <div class="col-4 col-md-4 col-lg-3">
+    <div class="col-3 col-md-2 col-lg-2">
         <div class="product product-2">
             <figure class="product-media">
                 <span class="product-label label-circle label-sale">Sale</span>
@@ -12,23 +12,26 @@
                 </div>
                 <!-- End .product-action -->
 
-                <div class="product-action">
-                    <a href="#" class="btn-product btn-cart" title="Add to cart"><span>add to
-                            cart</span></a>
-                    <a href="popup/quickView.html" class="btn-product btn-quickview" title="Quick view"><span>quick
-                            view</span></a>
+                <div class="product-action bg-primary">
+                    <button class="btn btn-product btn-cart addtocart text-white"  title="Add to cart"
+                    data-id='{{ $item->id }}' data-name={{ $item->name }} data-photo={{ $item->photo }}
+                    data-price={{ $item->price }} data-discount={{ $item->discount }} data-description={{ $item->description }}
+                    data-brand_id={{ $item->brand_id }} data-subcategory_id={{ $item->subcategory_id }}
+                    >add to cart</button>
                 </div>
                 <!-- End .product-action -->
             </figure>
             <!-- End .product-media -->
 
             <div class="product-body">
-                <div class="product-cat">
-                    <a href="#">{{ $item->subcategory->name }}</a>
-                </div>
+
                 <!-- End .product-cat -->
-                <h3 class="product-title"><a href="product.html">{{ $item->description }}</a>
+                <h3 class="product-title"><a href="product.html">{{ $item->name }}</a>
                 </h3>
+                <div class="product-cat">
+                    {{-- <a href="#">{{ $item->subcategory->name }}</a> --}}
+                    <a href="#">{{ $item->description }}</a>
+                </div>
                 <!-- End .product-title -->
                 @if ($item->discount > 0)
                     <div class="product-price">

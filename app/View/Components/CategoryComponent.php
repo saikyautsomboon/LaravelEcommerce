@@ -14,7 +14,7 @@ class CategoryComponent extends Component
      */
     public function __construct()
     {
-        $this->categories=Category::all();
+        $this->categories=Category::has('items')->get();
     }
 
     /**

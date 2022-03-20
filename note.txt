@@ -90,3 +90,10 @@ Admin or Customer
 Route::middleware('role:admin')->group(function () {
 
 });
+
+Page တိုင်းမှာ items မခေါ် ရအောင် Component သံုးတယ်
+-------------------------------------------------
+php artisan make:component ItemComponent
+    - app \ View \ Component ဆိုတာ သွားဆောက်တယ်
+    - view \ component \ အောက်မှာသွားဆောက်တယ်
+    - ပေါ်ချင်တဲ့ နေရာမှာ သွားထည့် <x-category-component></x-category-component>

@@ -38,6 +38,9 @@
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/skins/skin-demo-4.css') }}">
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/demos/demo-4.css') }}">
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/shoppingcart.js') }}"></script>
 </head>
 
 <body>
@@ -92,7 +95,7 @@
                                                 </a>
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
-                                                                                    document.getElementById('logout-form').submit();">
+                                                                                        document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
 
@@ -142,39 +145,6 @@
                     </div>
 
                     <div class="header-right">
-                        <div class="dropdown compare-dropdown">
-                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-display="static"
-                                title="Compare Products" aria-label="Compare Products">
-                                <div class="icon">
-                                    <i class="icon-random"></i>
-                                </div>
-                                <p>Compare</p>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <ul class="compare-products">
-                                    <li class="compare-product">
-                                        <a href="#" class="btn-remove" title="Remove Product"><i
-                                                class="icon-close"></i></a>
-                                        <h4 class="compare-product-title"><a href="product.html">Blue Night Dress</a>
-                                        </h4>
-                                    </li>
-                                    <li class="compare-product">
-                                        <a href="#" class="btn-remove" title="Remove Product"><i
-                                                class="icon-close"></i></a>
-                                        <h4 class="compare-product-title"><a href="product.html">White Long Skirt</a>
-                                        </h4>
-                                    </li>
-                                </ul>
-
-                                <div class="compare-actions">
-                                    <a href="#" class="action-link">Clear All</a>
-                                    <a href="#" class="btn btn-outline-primary-2"><span>Compare</span><i
-                                            class="icon-long-arrow-right"></i></a>
-                                </div>
-                            </div><!-- End .dropdown-menu -->
-                        </div><!-- End .compare-dropdown -->
 
                         <div class="wishlist">
                             <a href="wishlist.html" title="Wishlist">
@@ -191,60 +161,22 @@
                                 aria-haspopup="true" aria-expanded="false" data-display="static">
                                 <div class="icon">
                                     <i class="icon-shopping-cart"></i>
-                                    <span class="cart-count">2</span>
+                                    {{-- show item count  --}}
+                                    <span class="cart-count count"></span>
+                                    {{-- end show item count  --}}
                                 </div>
                                 <p>Cart</p>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <div class="dropdown-cart-products">
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Beige knitted elastic runner shoes</a>
-                                            </h4>
+                                {{-- show 1 item in cart  --}}
+                                <div class="dropdown-cart-products" id='showcartitem'>
 
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $84.00
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-1.jpg" alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i
-                                                class="icon-close"></i></a>
-                                    </div><!-- End .product -->
-
-                                    <div class="product">
-                                        <div class="product-cart-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Blue utility pinafore denim dress</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-                                                <span class="cart-product-qty">1</span>
-                                                x $76.00
-                                            </span>
-                                        </div><!-- End .product-cart-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-2.jpg" alt="product">
-                                            </a>
-                                        </figure>
-                                        <a href="#" class="btn-remove" title="Remove Product"><i
-                                                class="icon-close"></i></a>
-                                    </div><!-- End .product -->
                                 </div><!-- End .cart-product -->
+                                {{-- end show 1 item in Cart  --}}
 
-                                <div class="dropdown-cart-total">
-                                    <span>Total</span>
+                                <div class="dropdown-cart-total" id='itemtotal'>
 
-                                    <span class="cart-total-price">$160.00</span>
                                 </div><!-- End .dropdown-cart-total -->
 
                                 <div class="dropdown-cart-action">
@@ -271,9 +203,9 @@
                             <div class="dropdown-menu">
                                 <nav class="side-nav">
                                     <ul class="menu-vertical sf-arrows">
-                                        {{-- this is to show categories go to CategoryComponent.php  --}}
-                                            <x-category-component></x-category-component>
-                                        {{-- end show categories  --}}
+                                        {{-- this is to show categories go to CategoryComponent.php --}}
+                                        <x-category-component></x-category-component>
+                                        {{-- end show categories --}}
                                     </ul><!-- End .menu-vertical -->
                                 </nav><!-- End .side-nav -->
                             </div><!-- End .dropdown-menu -->
@@ -745,7 +677,7 @@
                             </ul>
                             <div class="tab-content" id="tab-content-5">
 
-                                {{-- This is Login Form  --}}
+                                {{-- This is Login Form --}}
                                 <div class="tab-pane fade show active" id="signin" role="tabpanel"
                                     aria-labelledby="signin-tab">
                                     <form method="POST" action="{{ route('login') }}">
@@ -808,8 +740,11 @@
 
                                         <div class="form-group">
                                             <label for="register-email">Name</label>
-                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder='Enter Your name'>
-                                                @error('name')
+                                            <input id="name" type="text"
+                                                class="form-control @error('name') is-invalid @enderror" name="name"
+                                                value="{{ old('name') }}" required autocomplete="name" autofocus
+                                                placeholder='Enter Your name'>
+                                            @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -818,7 +753,10 @@
 
                                         <div class="form-group">
                                             <label for="register-name">Name</label>
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="shop@gmail.com">
+                                            <input id="email" type="email"
+                                                class="form-control @error('email') is-invalid @enderror" name="email"
+                                                value="{{ old('email') }}" required autocomplete="email"
+                                                placeholder="shop@gmail.com">
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -829,7 +767,10 @@
 
                                         <div class="form-group">
                                             <label for="register-password">Password </label>
-                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Enter Your password">
+                                            <input id="password" type="password"
+                                                class="form-control @error('password') is-invalid @enderror"
+                                                name="password" required autocomplete="new-password"
+                                                placeholder="Enter Your password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -840,7 +781,9 @@
 
                                         <div class="form-group">
                                             <label for="register-cpassword">Confirm Password </label>
-                                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Enter Your Password Again">
+                                            <input id="password-confirm" type="password" class="form-control"
+                                                name="password_confirmation" required autocomplete="new-password"
+                                                placeholder="Enter Your Password Again">
                                         </div><!-- End .form-group -->
 
                                         <div class="form-footer">
@@ -894,6 +837,7 @@
     </div> --}}
     <!-- Plugins JS File -->
     <script src="{{ asset('lesson1/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('lesson1/assets/js/shoppingcart.js') }}"></script>
     <script src="{{ asset('lesson1/assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('lesson1/assets/js/jquery.hoverIntent.min.js') }}"></script>
     <script src="{{ asset('lesson1/assets/js/jquery.waypoints.min.js') }}"></script>
