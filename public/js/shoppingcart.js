@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     notic();
     show();
     $('.addtocart').on('click', function() {
