@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/skins/skin-demo-4.css') }}">
     <link rel="stylesheet" href="{{ asset('lesson1/assets/css/demos/demo-4.css') }}">
+    <link href="{{ asset('fontawesome/css/all.min.css') }}">
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/shoppingcart.js') }}"></script>
@@ -180,7 +181,7 @@
                                 </div><!-- End .dropdown-cart-total -->
 
                                 <div class="dropdown-cart-action">
-                                    <a href="cart.html" class="btn btn-primary">View Cart</a>
+                                    <a href="{{ route('cartpage') }}" class="btn btn-primary">View Cart</a>
                                     <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i
                                             class="icon-long-arrow-right"></i></a>
                                 </div><!-- End .dropdown-cart-total -->
@@ -850,6 +851,7 @@
     <!-- Main JS File -->
     <script src="{{ asset('lesson1/assets/js/main.js') }}"></script>
     <script src="{{ asset('lesson1/assets/js/demos/demo-4.js') }}"></script>
+    <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
 </body>
 
 

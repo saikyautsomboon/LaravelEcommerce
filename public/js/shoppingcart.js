@@ -1,5 +1,6 @@
 $(document).ready(function() {
     notic();
+    show();
     $('.addtocart').on('click', function() {
         var id = $(this).data('id');
         var name = $(this).data('name');
@@ -44,6 +45,7 @@ $(document).ready(function() {
         var itemstring = JSON.stringify(myitem);
         localStorage.setItem('ecomshop', itemstring);
         notic();
+        show();
     })
 
     function notic() {
@@ -102,5 +104,74 @@ $(document).ready(function() {
             $('.count').html(totalqty);
         }
 
+    }
+
+    function show() {
+        var itemshop = localStorage.getItem('ecomshop');
+
+        var itemtable = '';
+        var itemtotals = '';
+        var total = 0;
+        var subtotal = 0;
+        var j = 1;
+
+
+        if (itemshop) {
+            var myitem = JSON.parse(itemshop);
+
+            myitem.forEach(function(v, i) {
+                subtotal = v.qty * v.price;
+                total += subtotal;
+
+                itemtable += `
+                <tr>
+                    <td>${j++}</td>
+                    <td class="product-col">
+                        <div class="product">
+                            <figure class="product-media">
+                                <img src="${v.photo}"alt="Product image">
+                            </figure>
+                        </div>
+                    </td>
+                    <td>
+                        <h3 class="product-title">
+                            <a href="#">${v.name}</a>
+                        </h3>
+                    </td>
+                    <td class="price-col">${v.price} ks</td>
+                    <td class="quantity-col">
+                        <div class="cart-product-quantity">
+                            <i class="fa-solid fa-circle-plus fa-xl"></i>
+                                ${v.qty}
+                            <i class="fa-solid fa-circle-minus fa-xl"></i>
+                        </div>
+                    </td>
+                    <td class="total-col">${subtotal}</td>
+                    <td class="remove-col"><button class="btn-remove"><i
+                            class="icon-close"></i></button></td>
+                </tr>
+                `;
+            });
+            itemtotals += `
+            <div class="summary summary-cart">
+                <h3 class="summary-title">Cart Total</h3>
+
+                    <table class="table table-summary">
+                        <tbody>
+                            <tr class="summary-total">
+                                <td>Total:</td>
+                                <td>${total} ks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO
+                    CHECKOUT</a>
+            </div>
+            `;
+            $('#itemshowdata').html(itemtable);
+            $('#itemshowtotal').html(itemtotals);
+
+        }
     }
 })

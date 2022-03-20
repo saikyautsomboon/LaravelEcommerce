@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [FirstController::class, 'index'])->name('frontendpage');
 Route::get('productdetail',[FirstController::class, 'productdetail'])->name('productdetailpage');
 Route::get('filter/{id}',[FirstController::class, 'filter'])->name('filterpage');
+Route::get('shoppingcart',[FirstController::class, 'shoppingcart'])->name('cartpage');
 // route for backend
 
 Route::middleware('role:admin')->group(function () {
