@@ -34,12 +34,14 @@
                                         <td>{{ $order->location }}</td>
                                         <td>
 
-                                            <form action="{{ route('categories.destroy', $order->id) }}" method='POST'>
+                                            <form action="{{ route('orders.destroy', $order->id) }}" method='POST'>
                                                 @csrf
                                                 <a class="btn btn-warning"
-                                                    href="{{ route('categories.edit', $order->id) }}">Edit</a>
+                                                    href="{{ route('orders.show', $order->id) }}">Detail</a>
+                                                <a class="btn btn-success"
+                                                    href="{{ route('orders.edit', $order->id) }}">Confirm</a>
                                                 @method('DELETE')
-                                                <button type='submit' class="btn btn-danger">Delete</button>
+                                                <button type='submit' class="btn btn-danger">Cancel</button>
 
 
                                             </form>
