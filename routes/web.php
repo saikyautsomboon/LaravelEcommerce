@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +20,17 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', [FirstController::class, 'index'])->name('frontendpage');
+Route::get('/', [FirstController::class, 'index'])->name('homepage');
 Route::get('productdetail',[FirstController::class, 'productdetail'])->name('productdetailpage');
 Route::get('filter/{id}',[FirstController::class, 'filter'])->name('filterpage');
 Route::get('shoppingcart',[FirstController::class, 'shoppingcart'])->name('cartpage');
+Route::get('orderhistory',[FirstController::class, 'orderhistory'])->name('orderhistorypage');
+Route::resource('orders',OrderController::class);
 // route for backend
 
 Route::middleware('role:admin')->group(function () {
     Route::get('dashboard', [BackendController::class, 'dashboard'])->name('dashboard');
+    Route::resource('orders',OrderController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('brands', BrandController::class);
     Route::resource('subcategories', SubcategoryController::class);

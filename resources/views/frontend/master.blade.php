@@ -12,6 +12,8 @@
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="Lesson1 eCommerce Template">
     <meta name="author" content="p-themes">
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180"
         href="{{ asset('lesson1/assets/images/icons/apple-touch-icon.png') }}">
@@ -91,9 +93,6 @@
                                             </a>
 
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                                <a class=" dropdown-item" href="#">
-                                                    Order History
-                                                </a>
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                                         document.getElementById('logout-form').submit();">
@@ -148,12 +147,11 @@
                     <div class="header-right">
 
                         <div class="wishlist">
-                            <a href="wishlist.html" title="Wishlist">
+                            <a href="{{ route('orderhistorypage') }}" title="orderhistory">
                                 <div class="icon">
                                     <i class="icon-heart-o"></i>
-                                    <span class="wishlist-count badge">3</span>
                                 </div>
-                                <p>Wishlist</p>
+                                <p> Order History</p>
                             </a>
                         </div><!-- End .compare-dropdown -->
 
@@ -217,7 +215,7 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows">
                                 <li class="megamenu-container active">
-                                    <a href="index-4.html" class="sf-with-ul">Home</a>
+                                    <a href="{{ route('homepage') }}" class="sf-with-ul">Home</a>
                                 </li>
                                 <li>
                                     <a href="category.html" class="sf-with-ul">Shop</a>
@@ -852,6 +850,7 @@
     <script src="{{ asset('lesson1/assets/js/main.js') }}"></script>
     <script src="{{ asset('lesson1/assets/js/demos/demo-4.js') }}"></script>
     <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
+    {{-- @yield('script') --}}
 </body>
 
 

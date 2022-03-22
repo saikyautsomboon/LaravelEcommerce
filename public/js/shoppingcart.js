@@ -1,6 +1,11 @@
 $(function() {
     notic();
     show();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $('.addtocart').on('click', function() {
         var id = $(this).data('id');
         var name = $(this).data('name');
@@ -141,13 +146,13 @@ $(function() {
                     <td class="price-col">${v.price} ks</td>
                     <td class="quantity-col">
                         <div class="cart-product-quantity">
-                            <i class="fa-solid fa-circle-plus fa-xl"></i>
-                                ${v.qty}
-                            <i class="fa-solid fa-circle-minus fa-xl"></i>
+                            <label class="text-success fa-2x incressbtn" data-id=${i}><i class="fa-solid fa-circle-plus"></i></label>
+                                <label>${v.qty}</label>
+                            <label class="text-center text-danger fa-2x deletebtn" data-id=${i}><i class="fa-solid fa-circle-minus"></i></label>
                         </div>
                     </td>
                     <td class="total-col">${subtotal}</td>
-                    <td class="remove-col"><button class="btn-remove"><i
+                    <td class="remove-col"><button class="btn-remove reomvebtn" data-it=${i}><i
                             class="icon-close"></i></button></td>
                 </tr>
                 `;
@@ -165,8 +170,9 @@ $(function() {
                         </tbody>
                     </table>
 
-                    <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">PROCEED TO
-                    CHECKOUT</a>
+                    <button class="btn btn-outline-primary-2 btn-order btn-block checkoutbtn">CHECKOUT</button>
+                    <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE
+                    SHOPPING</span></a>
             </div>
             `;
             $('#itemshowdata').html(itemtable);
@@ -174,4 +180,84 @@ $(function() {
 
         }
     }
+    $('tbody').on('click', '.incressbtn', function() {
+        console.log('incressbtn');
+
+        var id = $(this).data('id');
+        var itemshop = localStorage.getItem('ecomshop');
+
+        if (itemshop) {
+            var itemarray = JSON.parse(itemshop);
+            itemarray.forEach(function(v, i) {
+                if (i == id) {
+                    v.qty++;
+                }
+            });
+            var itemstring = JSON.stringify(itemarray);
+            localStorage.setItem('ecomshop', itemstring);
+            show();
+        }
+    });
+    $('tbody').on('click', '.deletebtn', function() {
+        console.log('deletebtn');
+
+        var id = $(this).data('id');
+        var itemshop = localStorage.getItem('ecomshop');
+
+        if (itemshop) {
+            var itemarray = JSON.parse(itemshop);
+            itemarray.forEach(function(v, i) {
+                if (i == id) {
+                    v.qty--;
+                    if (v.qty == 0) {
+                        itemarray.splice(i, 1);
+                    }
+                }
+            });
+            var itemstring = JSON.stringify(itemarray);
+            localStorage.setItem('ecomshop', itemstring);
+            show();
+        }
+    });
+    $('tbody').on('click', '.reomvebtn', function() {
+        var id = $(this).data('id');
+        var itemshop = localStorage.getItem('ecomshop');
+
+        if (itemshop) {
+            var itemarray = JSON.parse(itemshop);
+            itemarray.splice(id, 1);
+        }
+        var itemstring = JSON.stringify(itemarray);
+        localStorage.setItem('ecomshop', itemstring);
+        show();
+    })
+    $('#itemshowtotal').on('click', '.checkoutbtn', function() {
+
+        var itemshop = localStorage.getItem('ecomshop');
+
+        var itemarray = JSON.parse(itemshop);
+        var location = $('#deliverylocation').val();
+
+        // simplify your javascript – use .map() .reduce() and .filter()
+        var total = itemarray.reduce(function(acc, row) {
+            return acc + (row.price * row.qty);
+        }, 0);
+        // end simplify your javascript – use .map() .reduce() and .filter()
+
+        // ajax comment
+        $.ajax({
+            url: "./orders",
+            method: 'POST',
+            data: {
+                itemshop: itemshop,
+                location: location,
+                total: total,
+            },
+            success: function(response) {
+                localStorage.clear();
+                $('#ordersuccess').modal('show');
+            }
+        });
+        // end ajax comment
+    })
 })

@@ -18,10 +18,19 @@ class Item extends Model
         'brand_id',
         'subcategory_id',
     ];
-    public function Subcategory(){
+    public function Subcategory()
+    {
         return $this->belongsTo('App\Models\Subcategory');
     }
-    public function Brand(){
+    public function Brand()
+    {
         return $this->belongsTo('App\Models\Brand');
+    }
+
+    public function Orders()
+    {
+        return $this->belongsToMany('App\Models\Order', 'orderdetails')
+            ->withPivot('qty')
+            ->withTimestamps();
     }
 }

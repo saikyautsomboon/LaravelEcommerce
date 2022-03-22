@@ -9,8 +9,7 @@
         <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Shop</a></li>
+
                     <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
                 </ol>
             </div><!-- End .container -->
@@ -20,7 +19,9 @@
             <div class="cart">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-9 ">
+                        <div class=" @guest col-lg-12
+@else
+col-lg-9 @endguest">
                             <table class="table table-responsive-sm">
                                 <thead>
                                     <tr>
@@ -39,30 +40,71 @@
                                 </tbody>
                             </table><!-- End .table table-wishlist -->
 
-                            <div class="cart-bottom">
-                                <div class="cart-discount">
+                            <div class="">
+                                <div class="">
                                     <form action="#">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" required
-                                                placeholder="Enter Your Location to Delivery">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-primary-2" type="submit"><i
-                                                        class="icon-long-arrow-right"></i></button>
-                                            </div><!-- .End .input-group-append -->
-                                        </div><!-- End .input-group -->
+                                        <textarea type="text" class="form-control" required placeholder="Enter Your Location to Delivery"
+                                            id='deliverylocation' required validate></textarea>
                                     </form>
                                 </div><!-- End .cart-discount -->
+                                @guest
+                                    <button class="btn btn-primary" type="submit">Login to Checkout</button>
+                                @endguest
                             </div><!-- End .cart-bottom -->
                         </div><!-- End .col-lg-9 -->
-                        <aside class="col-lg-3 " id='itemshowtotal'>
-
-
-                            <a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE
-                                    SHOPPING</span></a>
-                        </aside><!-- End .col-lg-3 -->
+                        @guest
+                        @else
+                            <aside class="col-lg-3" id='itemshowtotal'>
+                            </aside><!-- End .col-lg-3 -->
+                        @endguest
                     </div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End .cart -->
         </div><!-- End .page-content -->
     </main><!-- End .main -->
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="ordersuccess" tabindex="-1" aria-labelledby="ordersuccessLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ordersuccessLabel">Order Successfully</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your Product has been Order ! Wait Confirm by Admin
+                </div>
+                <div class="modal-footer">
+                    <a hred="{{ route('homepage') }}" class="btn btn-primary">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
+{{-- @section('script')
+
+    <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.checkoutbtn').click(function() {
+                var itemshop = localStorage.getItem('ecomshop');
+                var location = 'keng tong';
+
+                $.post(
+                    "{{ route('orders.store') }}", {
+                        itemshop: itemshop,
+                        location: location
+                    },
+                    function(response) {
+                        console.log(response);
+                    });
+            })
+        })
+    </script>
+@endsection --}}

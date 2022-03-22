@@ -3,6 +3,11 @@ Laravel 9 and 8
 Filesystem ဆောက် ရမယ်
 appp/Filesystem/FileSystem.phpဆောက်
 
+Time zone
+----------------------------------------------------------------
+    - app
+        - config / app/ မှာသွားပြင်ရပါမယ်
+
 Route
 ----------------------------------------------------------------
     - GET (show web page to user)
@@ -17,15 +22,22 @@ Ecommer
             -items,categories, subcategories,brands,
         - order manage(3)
             -orders, orderdetails
+
+            -order
+                -orderdate,user_id,total,status,orderno,location
+            -orderdetails
+                - qty,item_id,order_id
     - Customer
         - view items,orders(2)
 
 
 Migrations & Models
 --------------------------------
-    - php artisan make:model Mymodel -manage
+    - php artisan make:model Mymodel -m -r
     - Migrations (table structure)
     - Model () (Object Relational Mapping)
+    - php artisan migrate
+    - php artisan migrate:fresh (drop all table and migrate again)
 
 CRUD
 --------------------------------
