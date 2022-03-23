@@ -15,8 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
-        return view('backend.order', compact('orders'))->with('i');
+        $orders = Order::orderBy('id','desc')->get();
+        return view('backend.orders.order', compact('orders'))->with('i');
     }
 
     /**
@@ -61,7 +61,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return 'show';
+
+        return view('backend.orders.detail',compact('order'));
     }
 
     /**

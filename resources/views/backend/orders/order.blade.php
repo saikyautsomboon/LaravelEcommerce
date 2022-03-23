@@ -16,7 +16,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Order Date</th>
-                                    <th>User Name</th>
+                                    <th>Customer</th>
                                     <th>Total</th>
                                     <th>Order No</th>
                                     <th>Location</th>
@@ -29,7 +29,7 @@
                                         <td>{{ ++$i }}</td>
                                         <td>{{ $order->orderdate }}</td>
                                         <td>{{ $order->user->name }}</td>
-                                        <td>{{ $order->total }}</td>
+                                        <td>{{ number_format($order->total) }}</td>
                                         <td>{{ $order->orderno }}</td>
                                         <td>{{ $order->location }}</td>
                                         <td>
@@ -38,8 +38,8 @@
                                                 @csrf
                                                 <a class="btn btn-warning"
                                                     href="{{ route('orders.show', $order->id) }}">Detail</a>
-                                                <a class="btn btn-success"
-                                                    href="{{ route('orders.edit', $order->id) }}">Confirm</a>
+                                                {{-- <a class="btn btn-success" --}}
+                                                {{-- href="{{ route('orders.update', $order->id) }}">Confirm</a> --}}
                                                 @method('DELETE')
                                                 <button type='submit' class="btn btn-danger">Cancel</button>
 

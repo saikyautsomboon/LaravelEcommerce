@@ -125,7 +125,7 @@ $(function() {
             var myitem = JSON.parse(itemshop);
 
             myitem.forEach(function(v, i) {
-                subtotal = v.qty * v.price;
+                subtotal = v.qty * (v.price - v.discount);
                 total += subtotal;
 
                 itemtable += `
@@ -240,7 +240,7 @@ $(function() {
 
         // simplify your javascript – use .map() .reduce() and .filter()
         var total = itemarray.reduce(function(acc, row) {
-            return acc + (row.price * row.qty);
+            return acc + ((row.price - row.discount) * row.qty);
         }, 0);
         // end simplify your javascript – use .map() .reduce() and .filter()
 

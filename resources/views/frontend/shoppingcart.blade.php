@@ -76,7 +76,7 @@ col-lg-9 @endguest">
                 <div class="modal-body">
                     Your Product has been Order ! Wait Confirm by Admin
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer text-white">
                     <a hred="{{ route('homepage') }}" class="btn btn-primary">OK</a>
                 </div>
             </div>
